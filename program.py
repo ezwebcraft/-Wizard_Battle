@@ -1,12 +1,21 @@
 
 def main():
-    pass
+    print_header()
+    game_loop()
+
 
 def print_header():
-    pass
+    print('--------------------------------')
+    print('         Wizard Game \o/        ')
+    print('--------------------------------')
+    print()
+
 
 def game_loop():
-    pass
+
+    while True:
+        cmd = input('Do you [a]ttack, [r]unaway, or look [a]round?')
+
 
 if __name__ == '__main__':
     main()
