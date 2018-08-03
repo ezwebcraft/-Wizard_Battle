@@ -2,6 +2,7 @@ import actors
 
 from actors import Wizard, Creatures
 
+
 def main():
     print_header()
     game_loop()
@@ -17,15 +18,14 @@ def print_header():
 def game_loop():
 
     creature = [
-        Creatures(),
-        Creatures(),
-        Creatures(),
-        Creatures(),
-        Creatures()
+        Creatures('Toad', 1),
+        Creatures('Tiger', 12),
+        Creatures('Bat', 3),
+        Creatures('Dragon', 50),
+        Creatures('Evil Wizard', 99)
     ]
 
-    hero = Wizards()
-
+    hero = Wizards('Gandolf', 75)
 
     while True:
         cmd = input('Do you [a]ttack, [r]unaway, or look [a]round?')
