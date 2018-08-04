@@ -37,7 +37,7 @@ def game_loop():
 
         cmd = input('Do you [a]ttack, [r]unaway, or look [a]round?')
         if cmd == 'a':
-            print('attack')
+            hero.attack(active_creature)
         elif cmd == 'r':
             print('run away')
         elif cmd == 'l':
