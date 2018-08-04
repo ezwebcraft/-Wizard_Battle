@@ -51,7 +51,11 @@ def game_loop():
         elif cmd == 'r':
             print('run away')
         elif cmd == 'l':
-            print('look around')
+            print('the hero {} looks around and see others creatures to attack'.format(
+                hero.name
+                ))
+            for c in creatures:
+                print(' * A {} of level {}'.format(c.name, c.level))
         else:
             print('OK, we are exiting the game... bye bye')
             break
