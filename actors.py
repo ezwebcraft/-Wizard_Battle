@@ -12,7 +12,8 @@ class Wizard:
         ))
 
         my_roll = random.randint(1, 12) * self.level
-        creature_roll = random.randint(1, 12) * creature.level
+        # creature_roll = random.randint(1, 12) * creature.level
+        creature_roll = Creatures.get_defensive_roll()
 
         print("You roll {}...".format(my_roll))
         print("{} rolls {} ...".format(creature.name, creature_roll))
@@ -29,3 +30,11 @@ class Creatures:
     def __init__(self, name, level):
         self.name = name
         self.level = level
+
+    def __repr__(self):
+        return "Creature: {} of level {}".format(
+            self.name, self.level
+        )
+
+    def get_defensive_roll(self):
+        return random.randint(1, 12) * self.level
