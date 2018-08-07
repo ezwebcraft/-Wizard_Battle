@@ -12,13 +12,20 @@ def main():
 
 def print_header():
     print('--------------------------------')
+    print('''         _                  _ 
+                     (_)                | |
+            __      ___ ______ _ _ __ __| |
+            \ \ /\ / / |_  / _` | '__/ _` |
+             \ V  V /| |/ / (_| | | | (_| |
+              \_/\_/ |_/___\__,_|_|  \__,_|
+                
+    ''')
     print('         Wizard Game \o/        ')
     print('--------------------------------')
     print()
 
 
 def game_loop():
-
     creatures = [
         Creatures('Toad', 1),
         Creatures('Tiger', 12),
@@ -44,7 +51,7 @@ def game_loop():
                 creatures.remove(active_creature)
             else:
                 print("The Wizard has been knock out !!!")
-                #print('Game Over !!!')
+                # print('Game Over !!!')
                 time.sleep(5)
                 print("Wizard woke up and ready again")
 
@@ -53,13 +60,19 @@ def game_loop():
         elif cmd == 'l':
             print('the hero {} looks around and see others creatures to attack'.format(
                 hero.name
-                ))
+            ))
             for c in creatures:
                 print(' * A {} of level {}'.format(c.name, c.level))
         else:
             print('OK, we are exiting the game... bye bye')
             break
+
+        if not creatures:
+            print("The wizard has defeated all the creatures")
+            break
+
         print()
+
 
 if __name__ == '__main__':
     main()
