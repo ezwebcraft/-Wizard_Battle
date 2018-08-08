@@ -14,17 +14,15 @@ class Creatures:
     def get_defensive_roll(self):
         return random.randint(1, 12) * self.level
 
+
 class Wizard(Creatures):
-    def __init__(self, name, level):
-        super().__init__(name,level)
 
     def attack(self, creature):
         print("The Wizard {} attacks {}!".format(
             self.name, creature.name
         ))
 
-        my_roll = random.randint(1, 12) * self.level
-        # creature_roll = random.randint(1, 12) * creature.level
+        my_roll = self.get_defensive_roll()
         creature_roll = Creatures.get_defensive_roll()
 
         print("You roll {}...".format(my_roll))
@@ -36,5 +34,6 @@ class Wizard(Creatures):
         else:
             print("The Wizard has been Defeated by the creature !!!")
             return False
+
 
 
