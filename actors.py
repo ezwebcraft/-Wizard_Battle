@@ -1,10 +1,22 @@
 import random
 
 
-class Wizard:
+class Creatures:
     def __init__(self, name, level):
         self.name = name
         self.level = level
+
+    def __repr__(self):
+        return "Creature: {} of level {}".format(
+            self.name, self.level
+        )
+
+    def get_defensive_roll(self):
+        return random.randint(1, 12) * self.level
+
+class Wizard(Creatures):
+    def __init__(self, name, level):
+        super().__init__(name,level)
 
     def attack(self, creature):
         print("The Wizard {} attacks {}!".format(
@@ -26,15 +38,3 @@ class Wizard:
             return False
 
 
-class Creatures:
-    def __init__(self, name, level):
-        self.name = name
-        self.level = level
-
-    def __repr__(self):
-        return "Creature: {} of level {}".format(
-            self.name, self.level
-        )
-
-    def get_defensive_roll(self):
-        return random.randint(1, 12) * self.level
